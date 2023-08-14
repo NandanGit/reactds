@@ -1,5 +1,5 @@
 {
-	"name": "boiler-plate",
+	"name": "@reactds/core",
 	"version": "0.0.0",
 	"description": "> TODO: Write description",
 	"main": "dist/cjs/index.js",
