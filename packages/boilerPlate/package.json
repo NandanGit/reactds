@@ -32,5 +32,23 @@
 		"rollup-plugin-postcss": "^4.0.2",
 		"tslib": "^2.6.1",
 		"typescript": "^5.1.6"
+	},
+	"directories": {
+		"lib": "dist",
+		"test": "__tests__"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/NandanGit/reactds.git"
+	},
+	"bugs": {
+		"url": "https://github.com/NandanGit/reactds/issues"
+	},
+	"homepage": "https://github.com/NandanGit/reactds#readme",
+	"dependencies": {
+		"class-variance-authority": "^0.7.0",
+		"clsx": "^2.0.0",
+		"tailwind-merge": "^1.14.0",
+		"tailwindcss-animate": "^1.0.6"
 	}
 }
