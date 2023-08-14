@@ -2,31 +2,33 @@
 	"name": "trial",
 	"version": "1.0.0",
 	"description": "",
-	"main": "lib/cjs/index.js",
-	"module": "lib/esm/index.js",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
 	"files": [
-		"lib",
-		"src"
+		"dist"
 	],
-	"types": "lib/index.d.ts",
+	"types": "dist/index.d.ts",
 	"scripts": {
-		"build": "rm -rf lib && rollup -c"
+		"start": "rollup -c --watch",
+		"build": "rm -rf dist && rollup -c"
 	},
 	"keywords": [],
 	"author": "Nandan Reddy",
 	"license": "ISC",
-	"dependencies": {
+	"peerDependencies": {
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "^25.0.4",
 		"@rollup/plugin-node-resolve": "^15.1.0",
+		"@rollup/plugin-terser": "^0.4.3",
 		"@rollup/plugin-typescript": "^11.1.2",
 		"node-sass": "^9.0.0",
 		"postcss": "^8.4.27",
 		"rollup": "^3.28.0",
 		"rollup-plugin-dts": "^5.3.1",
+		"rollup-plugin-peer-deps-external": "^2.2.4",
 		"rollup-plugin-postcss": "^4.0.2",
 		"tslib": "^2.6.1",
 		"typescript": "^5.1.6"
