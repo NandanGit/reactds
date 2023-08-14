@@ -1,0 +1,26 @@
+{
+	"name": "@reactds/core",
+	"version": "0.0.0",
+	"description": "Unstyled components using shadcn-ui",
+	"author": "Nandan Reddy <nandan.reddy1133@gmail.com>",
+	"homepage": "https://github.com/NandanGit/reactds#readme",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"directories": {
+		"lib": "lib",
+		"test": "__tests__"
+	},
+	"files": [
+		"lib"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/NandanGit/reactds.git"
+	},
+	"scripts": {
+		"test": "node ./__tests__/core.test.js"
+	},
+	"bugs": {
+		"url": "https://github.com/NandanGit/reactds/issues"
+	}
+}
