@@ -1,11 +1,16 @@
-import { Button } from './Button';
+import { Button, ButtonProps } from './Button';
 import {
 	ButtonIntent,
 	ButtonSize,
 	ButtonVariant,
-	ButtonProps,
+	ButtonVariations,
 } from './Button.types';
 
 export { Button };
-
-export type { ButtonProps, ButtonIntent, ButtonSize, ButtonVariant };
+export type {
+	ButtonProps,
+	ButtonIntent,
+	ButtonSize,
+	ButtonVariant,
+	ButtonVariations,
+};
