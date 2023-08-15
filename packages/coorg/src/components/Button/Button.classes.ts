@@ -1,5 +1,5 @@
-import {ButtonVariations} from '@reactds/core';
-import {cva} from 'class-variance-authority';
+import { ButtonVariations } from '@reactds/core';
+import { cva } from 'class-variance-authority';
 
 export const buttonVariations = cva<ButtonVariations>(
   'coorg-btn bg-violet-400 w-[10rem]',
