@@ -4,6 +4,7 @@
   "description": "> TODO: Write description",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "prettier": "@reactds/prettier-config",
   "files": [
     "dist"
   ],
@@ -11,17 +12,34 @@
   "scripts": {
     "start": "rollup -c --watch",
     "build": "rm -rf dist && rollup -c",
+    "lint:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "keywords": [],
   "author": "Nandan Reddy <nandan.reddy1133@gmail.com>",
   "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@reactds/core": "file:../core",
+    "class-variance-authority": "^0.7.0"
+  },
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@reactds/prettier-config": "file:../prettier-config",
     "@rollup/plugin-commonjs": "^25.0.4",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-terser": "^0.4.3",
@@ -35,8 +53,11 @@
     "@storybook/react-vite": "^7.2.3",
     "@storybook/testing-library": "^0.2.0",
     "autoprefixer": "^10.4.15",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.0",
     "node-sass": "^9.0.0",
     "postcss": "^8.4.27",
+    "prettier": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^3.28.0",
@@ -59,12 +80,5 @@
   "bugs": {
     "url": "https://github.com/NandanGit/reactds/issues"
   },
-  "homepage": "https://github.com/NandanGit/reactds#readme",
-  "dependencies": {
-    "@reactds/core": "file:../core",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.0.0",
-    "tailwind-merge": "^1.14.0",
-    "tailwindcss-animate": "^1.0.6"
-  }
+  "homepage": "https://github.com/NandanGit/reactds#readme"
 }
