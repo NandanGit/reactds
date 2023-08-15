@@ -1,0 +1,8 @@
+{
+	"name": "@reactds/prettier-config",
+	"version": "1.0.0",
+	"description": "prettier config for the whole scope",
+	"main": "index.json",
+	"author": "Nandan Reddy",
+	"license": "MIT"
+}

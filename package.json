@@ -1,11 +1,17 @@
 {
-  "name": "root",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "dependencies": {},
-  "devDependencies": {
-    "lerna": "^7.1.5"
-  }
+	"name": "root",
+	"private": true,
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+		"start": "npm run start -w @reactds/core"
+	},
+	"devDependencies": {
+		"@types/react": "^18.2.20",
+		"@types/react-dom": "^18.2.7",
+		"lerna": "^7.1.5",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	}
 }
