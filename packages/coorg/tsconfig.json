@@ -16,6 +16,8 @@
 		"strictNullChecks": true,
 		// "suppressImplicitAnyIndexErrors": true,
 		"allowSyntheticDefaultImports": true
+		// "allowJs": true,
+		// "resolveJsonModule": true
 	},
 	"include": ["src/**/*.ts*"],
 	"exclude": ["node_modules", "dist"]
