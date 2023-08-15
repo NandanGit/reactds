@@ -1,57 +1,70 @@
 {
-	"name": "@reactds/coorg",
-	"version": "0.0.0",
-	"description": "> TODO: Write description",
-	"main": "dist/cjs/index.js",
-	"module": "dist/esm/index.js",
-	"files": [
-		"dist"
-	],
-	"types": "dist/index.d.ts",
-	"scripts": {
-		"start": "rollup -c --watch",
-		"build": "rm -rf dist && rollup -c"
-	},
-	"keywords": [],
-	"author": "Nandan Reddy <nandan.reddy1133@gmail.com>",
-	"license": "MIT",
-	"peerDependencies": {
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
-	},
-	"devDependencies": {
-		"@rollup/plugin-commonjs": "^25.0.4",
-		"@rollup/plugin-node-resolve": "^15.1.0",
-		"@rollup/plugin-terser": "^0.4.3",
-		"@rollup/plugin-typescript": "^11.1.2",
-		"autoprefixer": "^10.4.15",
-		"node-sass": "^9.0.0",
-		"postcss": "^8.4.27",
-		"rollup": "^3.28.0",
-		"rollup-plugin-dts": "^5.3.1",
-		"rollup-plugin-peer-deps-external": "^2.2.4",
-		"rollup-plugin-postcss": "^4.0.2",
-		"tailwindcss": "^3.3.3",
-		"tslib": "^2.6.1",
-		"typescript": "^5.1.6"
-	},
-	"directories": {
-		"lib": "dist",
-		"test": "__tests__"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/NandanGit/reactds.git"
-	},
-	"bugs": {
-		"url": "https://github.com/NandanGit/reactds/issues"
-	},
-	"homepage": "https://github.com/NandanGit/reactds#readme",
-	"dependencies": {
-		"@reactds/core": "file:../core",
-		"class-variance-authority": "^0.7.0",
-		"clsx": "^2.0.0",
-		"tailwind-merge": "^1.14.0",
-		"tailwindcss-animate": "^1.0.6"
-	}
+  "name": "@reactds/coorg",
+  "version": "0.0.0",
+  "description": "> TODO: Write description",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "rollup -c --watch",
+    "build": "rm -rf dist && rollup -c",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [],
+  "author": "Nandan Reddy <nandan.reddy1133@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@storybook/addon-essentials": "^7.2.3",
+    "@storybook/addon-interactions": "^7.2.3",
+    "@storybook/addon-links": "^7.2.3",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.2.3",
+    "@storybook/react": "^7.2.3",
+    "@storybook/react-vite": "^7.2.3",
+    "@storybook/testing-library": "^0.2.0",
+    "autoprefixer": "^10.4.15",
+    "node-sass": "^9.0.0",
+    "postcss": "^8.4.27",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^3.28.0",
+    "rollup-plugin-dts": "^5.3.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "storybook": "^7.2.3",
+    "tailwindcss": "^3.3.3",
+    "tslib": "^2.6.1",
+    "typescript": "^5.1.6"
+  },
+  "directories": {
+    "lib": "dist",
+    "test": "__tests__"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NandanGit/reactds.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NandanGit/reactds/issues"
+  },
+  "homepage": "https://github.com/NandanGit/reactds#readme",
+  "dependencies": {
+    "@reactds/core": "file:../core",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss-animate": "^1.0.6"
+  }
 }
