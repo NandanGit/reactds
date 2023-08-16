@@ -1,4 +1,5 @@
 import { Button, ButtonProps } from './Button';
+import { buttonVariants } from './Button.constants';
 import {
 	ButtonIntent,
 	ButtonSize,
@@ -6,7 +7,7 @@ import {
 	ButtonVariations,
 } from './Button.types';
 
-export { Button };
+export { Button, buttonVariants };
 export type {
 	ButtonProps,
 	ButtonIntent,

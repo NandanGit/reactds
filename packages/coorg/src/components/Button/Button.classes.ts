@@ -1,37 +1,35 @@
 import { ButtonVariations } from '@reactds/core';
 import { cva } from 'class-variance-authority';
+import { NS } from '../../constants';
 
 export const buttonVariations = cva<ButtonVariations>(
-  'coorg-btn glass inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors  disabled:pointer-events-none disabled:opacity-50 hover:cursor-pointer',
+  `${NS}-btn glass inline-flex items-center justify-center rounded-md text-base font-medium transition-all  disabled:pointer-events-none disabled:opacity-50 hover:cursor-pointer transform hover:scale-[103%] active:scale-[101%] text-white/70`,
   {
     variants: {
       variant: {
-        default: 'coorg-btn-default',
-        outline: '!bg-transparent',
-        ghost: 'coorg-btn-ghost',
-        link: 'coorg-btn-link',
-
-        // Custom
-        minimal: 'coorg-btn-minimal',
+        filled: `${NS}-filled !text-white/80`,
+        outline: `${NS}-outline border-solid border-2  backdrop-blur-0`,
+        ghost: `${NS}-ghost backdrop-blur-0 shadow-none`,
+        link: `${NS}-link !bg-transparent backdrop-blur-0 shadow-none hover:underline`,
+        'inline-link': `${NS}-inline-link !bg-transparent backdrop-blur-0 shadow-none hover:underline !p-0 !h-fit !w-fit`,
       },
       size: {
-        sm: 'h-8 px-3 text-xs',
-        md: 'h-9 px-4 py-2',
-        lg: 'coorg-btn-lg',
+        sm: `${NS}-sm h-8 px-3 text-sm`,
+        md: `${NS}-md h-9 px-4 py-2`,
+        lg: `${NS}-lg h-10 px-6 text-lg`,
       },
       intent: {
-        default: 'coorg-btn-intent-default',
-        primary:
-          'bg-primary-800/80 text-primary-100/80 hover:bg-primary-700/80 active:bg-primary-800/80',
-        secondary: 'coorg-btn-secondary',
-        info: 'coorg-btn-info',
-        warning: 'coorg-btn-warning',
-        success: 'coorg-btn-success',
-        danger: 'coorg-btn-danger',
+        default: `${NS}-default`,
+        primary: `${NS}-primary bg-primary-800/80 text-primary-500/50 shadow-primary-800/80 border-primary-800`,
+        secondary: `${NS}-secondary bg-secondary-800/80 text-secondary-500/50 shadow-secondary-800/80 border-secondary-800`,
+        info: `${NS}-info bg-info-800/80 text-info-500/50 shadow-info-800/80 border-info-800`,
+        warning: `${NS}-warning bg-warning-800/80 text-warning-500/50 shadow-warning-800/80 border-warning-800`,
+        success: `${NS}-success bg-success-800/80 text-success-500/50 shadow-success-800/80 border-success-800`,
+        danger: `${NS}-danger bg-danger-900/90 text-danger-500/60 shadow-danger-800/80 border-danger-900/90`,
       },
     },
     defaultVariants: {
-      variant: 'default',
+      variant: 'filled',
       size: 'md',
       intent: 'default',
     },

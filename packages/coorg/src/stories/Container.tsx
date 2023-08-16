@@ -10,7 +10,9 @@ export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   showPattern?: boolean;
 }
 
-export const Container: React.FC<ContainerProps> = ({
+const Container: React.FC<ContainerProps> & {
+  Portion: typeof Portion;
+} = ({
   className = '',
   // style = {},
   children,
@@ -36,15 +38,13 @@ export const Container: React.FC<ContainerProps> = ({
           'Container',
           className,
           {
-            'flex justify-center items-center': true,
+            'flex justify-center items-center gap-2': true,
             'flex-row': horizontal && !reverse,
             'flex-col': !horizontal && !reverse,
             'flex-row-reverse': horizontal && reverse,
             'flex-col-reverse': !horizontal && reverse,
-            'space-x-reverse space-y-reverse': reverse,
           },
-          horizontal ? 'space-x-2' : 'space-y-2',
-          'min-w-[80%] min-h-[80%]',
+          'min-w-[80%] min-h-[80%] p-4',
           'glass', // Glass look
         )}
         {...props}
@@ -54,3 +54,40 @@ export const Container: React.FC<ContainerProps> = ({
     </div>
   );
 };
+
+export interface PortionProps extends React.HTMLAttributes<HTMLDivElement> {
+  title?: string;
+  horizontal?: boolean;
+  reverse?: boolean;
+}
+
+const Portion: React.FC<PortionProps> = ({
+  children,
+  className = '',
+  title,
+  horizontal = false,
+  reverse = false,
+  ...props
+}) => {
+  return (
+    <div
+      className={clsx(className, 'flex justify-between items-center gap-2', {
+        'flex-row': horizontal && !reverse,
+        'flex-col': !horizontal && !reverse,
+        'flex-row-reverse': horizontal && reverse,
+        'flex-col-reverse': !horizontal && reverse,
+      })}
+      {...props}
+    >
+      {title && (
+        <span className="text-center font-bold tracking-wider uppercase">
+          {title}
+        </span>
+      )}
+      {children}
+    </div>
+  );
+};
+
+Container.Portion = Portion;
+export { Container };

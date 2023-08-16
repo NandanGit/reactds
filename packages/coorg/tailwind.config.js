@@ -10,6 +10,11 @@ module.exports = {
       colors: {
         glass: colors.neutral[500],
         primary: colors.lime,
+        secondary: colors.sky,
+        success: colors.emerald,
+        danger: colors.red,
+        info: colors.teal,
+        warning: colors.yellow,
       },
     },
   },

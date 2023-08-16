@@ -1,0 +1,63 @@
+.#{$ns}-btn {
+  // &.#{$ns}-outline {
+  //   @apply bg-transparent;
+  // }
+
+  // &.#{$ns}-ghost {
+  //   @apply bg-transparent;
+  // }
+
+  &.#{$ns}-outline,
+  &.#{$ns}-ghost {
+    @apply bg-transparent;
+
+    &:hover {
+      @apply text-white/80 border-transparent;
+
+      &.#{$ns}-default {
+        @apply glass rounded-md text-white/80;
+      }
+
+      &.#{$ns}-primary {
+        @apply bg-primary-800/80;
+      }
+
+      &.#{$ns}-secondary {
+        @apply bg-secondary-800/80;
+      }
+
+      &.#{$ns}-success {
+        @apply bg-success-800/80;
+      }
+
+      &.#{$ns}-danger {
+        @apply bg-danger-800/80;
+      }
+
+      &.#{$ns}-info {
+        @apply bg-info-800/80;
+      }
+
+      &.#{$ns}-warning {
+        @apply bg-warning-800/80;
+      }
+    }
+  }
+
+  // &.#{$ns}-primary.#{$ns}-outline {
+  //   @apply bg-primary-800/80 bg-opacity-100;
+  // }
+
+  // &.#{$ns}-primary {
+  //   @apply bg-primary-800/80 text-primary-100/80;
+
+  //   &.#{$ns}-outline {
+  //     @apply bg-transparent backdrop-blur-0 text-primary-500/50 shadow-primary-800/80 shadow-[inset_0_0_0_0.15rem];
+
+  //     &:hover {
+  //       // @apply brightness-100;
+  //       @apply bg-primary-800/80 shadow-none text-primary-100/80;
+  //     }
+  //   }
+  // }
+}

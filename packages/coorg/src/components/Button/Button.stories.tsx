@@ -2,6 +2,11 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
 import { Container } from '../../stories/Container';
+import {
+  componentIntents as buttonIntents,
+  buttonVariants,
+} from '@reactds/core';
+import { capitalize } from '../../stories/utils/string';
 
 const meta = {
   title: 'Components/Primitives/Button',
@@ -14,24 +19,6 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-export const Gallery: Story = {
-  render: () => {
-    return (
-      <Container>
-        <Button>Button 1</Button>
-        <Button intent="primary">Button 2</Button>
-        <Button intent="primary" variant="outline">
-          Button 3
-        </Button>
-        <Button disabled>Button 4</Button>
-      </Container>
-    );
-  },
-  parameters: {
-    layout: 'fullscreen',
-  },
-};
 
 export const Default: Story = {
   args: {
@@ -57,5 +44,60 @@ export const Size: Story = {
   args: {
     size: 'sm',
     children: 'Button',
+  },
+};
+
+export const Gallery: Story = {
+  render: () => {
+    const variantsToBeShown = buttonVariants.filter(
+      (variant) => variant.toLowerCase() !== 'inline-link',
+    );
+    return (
+      <Container className="font-sans">
+        <div className="flex gap-2">
+          {variantsToBeShown.map((variant) => (
+            <Container.Portion
+              key={variant}
+              title={variant}
+              className="items-stretch"
+            >
+              {buttonIntents.map((intent) => (
+                <Button
+                  key={intent}
+                  intent={intent}
+                  variant={variant}
+                  className="capitalize"
+                >
+                  {intent}
+                </Button>
+              ))}
+            </Container.Portion>
+          ))}
+        </div>
+        <Container.Portion title="Inline-links:" horizontal className="mt-4">
+          {buttonIntents.map((intent) => (
+            <Button key={intent} intent={intent} variant="inline-link">
+              {intent}
+            </Button>
+          ))}
+        </Container.Portion>
+        <Container.Portion
+          title="Full Button"
+          className="w-3/4 border-dashed p-2 rounded-lg"
+        >
+          <Button
+            className="w-full"
+            intent="primary"
+            variant="outline"
+            size="lg"
+          >
+            This is a full button
+          </Button>
+        </Container.Portion>
+      </Container>
+    );
+  },
+  parameters: {
+    layout: 'fullscreen',
   },
 };

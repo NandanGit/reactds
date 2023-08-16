@@ -1,7 +1,7 @@
 export const buttonVariants = [
-  'default',
-  'minimal',
-  'outline',
-  'ghost',
-  'link',
+	'filled',
+	'outline',
+	'ghost',
+	'link',
+	'inline-link',
 ] as const;
