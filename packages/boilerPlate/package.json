@@ -1,5 +1,6 @@
 {
 	"name": "boiler-plate",
+	"private": true,
 	"version": "0.0.0",
 	"description": "> TODO: Write description",
 	"main": "dist/cjs/index.js",

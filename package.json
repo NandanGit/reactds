@@ -5,7 +5,8 @@
 		"packages/*"
 	],
 	"scripts": {
-		"start": "npm run start -w @reactds/core"
+		"start": "npm run start -w @reactds/core",
+		"update-version": "lerna version --no-private"
 	},
 	"devDependencies": {
 		"@types/react": "^18.2.20",
