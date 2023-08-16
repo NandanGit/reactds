@@ -6,7 +6,9 @@
 	],
 	"scripts": {
 		"start": "npm run start -w @reactds/core",
-		"update-version": "lerna version --no-private"
+		"update-versions": "lerna version --no-private",
+		"publish-versions": "lerna publish --no-private",
+		"push": "npm run update-versions && npm run publish-versions"
 	},
 	"devDependencies": {
 		"@types/react": "^18.2.20",
