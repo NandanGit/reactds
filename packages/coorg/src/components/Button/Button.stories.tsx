@@ -6,7 +6,6 @@ import {
   componentIntents as buttonIntents,
   buttonVariants,
 } from '@reactds/core';
-import { capitalize } from '../../stories/utils/string';
 
 const meta = {
   title: 'Components/Primitives/Button',
@@ -22,28 +21,45 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: 'Button',
+    children: 'Default',
   },
 };
 
 export const Variant: Story = {
   args: {
     variant: 'outline',
-    children: 'Button',
+    children: 'Outline',
   },
 };
 
 export const Intent: Story = {
   args: {
-    intent: 'secondary',
-    children: 'Button',
+    intent: 'success',
+    children: 'Success',
   },
 };
 
 export const Size: Story = {
   args: {
-    size: 'sm',
-    children: 'Button',
+    size: 'lg',
+    children: 'Large',
+  },
+};
+
+export const Full: Story = {
+  args: {
+    full: true,
+    children: 'This is a full Button',
+  },
+  parameters: {
+    layout: 'fullscreen',
+  },
+};
+
+export const Pill: Story = {
+  args: {
+    pill: true,
+    children: 'Pill Button',
   },
 };
 
@@ -85,14 +101,11 @@ export const Gallery: Story = {
           title="Full Button"
           className="w-3/4 border-dashed p-2 rounded-lg"
         >
-          <Button
-            className="w-full" //
-            // intent="info"
-            // variant="outline"
-            size="lg"
-          >
-            This is a full button
-          </Button>
+          <Button full>This is a full button</Button>
+        </Container.Portion>
+        <Container.Portion title="Others:" horizontal className="mt-4">
+          <Button disabled>Disabled</Button>
+          <Button pill>Pill</Button>
         </Container.Portion>
       </Container>
     );
