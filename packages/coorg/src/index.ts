@@ -1,4 +1,3 @@
-import './styles/tailwind.css';
-// import './styles/scss/main.scss';
+import './styles';
 
 export * from './components';
