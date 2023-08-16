@@ -86,9 +86,9 @@ export const Gallery: Story = {
           className="w-3/4 border-dashed p-2 rounded-lg"
         >
           <Button
-            className="w-full"
-            intent="primary"
-            variant="outline"
+            className="w-full" //
+            // intent="info"
+            // variant="outline"
             size="lg"
           >
             This is a full button
