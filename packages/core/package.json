@@ -10,7 +10,8 @@
 	"types": "dist/index.d.ts",
 	"scripts": {
 		"start": "rollup -c --watch",
-		"build": "rm -rf dist && rollup -c"
+		"build": "rm -rf dist && rollup -c",
+		"prepack": "npm run build"
 	},
 	"keywords": [],
 	"author": "Nandan Reddy <nandan.reddy1133@gmail.com>",

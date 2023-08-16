@@ -14,7 +14,8 @@
     "build": "rm -rf dist && rollup -c rollup.config.dev.mjs && node scripts/cleanupCSSImportsFromDeclarationFiles.js && rollup -c rollup.config.prod.mjs",
     "lint:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepack": "npm run build"
   },
   "keywords": [],
   "author": "Nandan Reddy <nandan.reddy1133@gmail.com>",
