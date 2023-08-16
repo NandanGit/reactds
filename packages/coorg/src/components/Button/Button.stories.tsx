@@ -46,20 +46,20 @@ export const Size: Story = {
   },
 };
 
-export const Full: Story = {
+export const Shape: Story = {
+  args: {
+    pill: true,
+    children: 'Pill Button',
+  },
+};
+
+export const Width: Story = {
   args: {
     full: true,
     children: 'This is a full Button',
   },
   parameters: {
     layout: 'fullscreen',
-  },
-};
-
-export const Pill: Story = {
-  args: {
-    pill: true,
-    children: 'Pill Button',
   },
 };
 
@@ -70,6 +70,12 @@ export const Gallery: Story = {
     );
     return (
       <Container className="font-sans">
+        <Container.Portion
+          title="Full Button"
+          className="self-stretch border-dashed p-2 rounded-lg"
+        >
+          <Button full>This is a full button</Button>
+        </Container.Portion>
         <div className="flex gap-2">
           {variantsToBeShown.map((variant) => (
             <Container.Portion
@@ -97,15 +103,10 @@ export const Gallery: Story = {
             </Button>
           ))}
         </Container.Portion>
-        <Container.Portion
-          title="Full Button"
-          className="w-3/4 border-dashed p-2 rounded-lg"
-        >
-          <Button full>This is a full button</Button>
-        </Container.Portion>
+
         <Container.Portion title="Others:" horizontal className="mt-4">
           <Button disabled>Disabled</Button>
-          <Button pill>Pill</Button>
+          <Button pill>Pill Shaped button</Button>
         </Container.Portion>
       </Container>
     );

@@ -2,6 +2,7 @@ import React from 'react';
 import { clsx } from 'clsx';
 import backgroundImage from '../stories/assets/leaves.png';
 import backgroundSvg from '../stories/assets/bg.svg';
+import { Surface } from '../components/Surface/Surface';
 
 export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
@@ -33,7 +34,7 @@ const Container: React.FC<ContainerProps> & {
       }}
       className="flex justify-center items-center"
     >
-      <div
+      {/* <div
         className={clsx(
           'Container',
           className,
@@ -48,9 +49,23 @@ const Container: React.FC<ContainerProps> & {
           'glass', // Glass look
         )}
         {...props}
+      > */}
+      <Surface
+        className={clsx(
+          className,
+          {
+            'flex justify-center items-center gap-2': true,
+            'flex-row': horizontal && !reverse,
+            'flex-col': !horizontal && !reverse,
+            'flex-row-reverse': horizontal && reverse,
+            'flex-col-reverse': !horizontal && reverse,
+          },
+          // 'min-w-[80%] min-h-[80%]',
+        )}
       >
         {children}
-      </div>
+      </Surface>
+      {/* </div> */}
     </div>
   );
 };
