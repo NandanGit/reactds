@@ -4,6 +4,7 @@ import typescript from '@rollup/plugin-typescript';
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
+import postcssScss from 'postcss-scss';
 
 import packageJson from './package.json' assert { type: 'json' };
 
@@ -25,24 +26,13 @@ export default [
       resolve(),
       commonjs(),
       typescript({ tsconfig: './tsconfig.json' }),
-      postcss(),
+      postcss({
+        plugins: [],
+        // extract: true,
+        extensions: ['.css', '.scss'],
+        parser: postcssScss,
+      }),
       terser(),
     ],
   },
-  // {
-  //   input: './dist/esm/index.d.ts',
-  //   output: './dist/esm/styles.d.ts',
-  //   plugins: [
-  //     shell({
-  //       commands: ['echo "" > ./dist/esm/styles.d.ts'],
-  //     }),
-  //   ],
-  // },
-  // {
-  //   input: 'dist/esm/index.d.ts',
-  //   output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-  //   plugins: [
-  //     dts(),
-  //   ],
-  // },
 ];

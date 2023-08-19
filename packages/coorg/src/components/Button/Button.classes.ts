@@ -3,14 +3,14 @@ import { cva } from 'class-variance-authority';
 import { NS } from '../../constants';
 
 export const buttonVariations = cva<ButtonVariations>(
-  `${NS}-btn glass inline-flex items-center justify-center rounded-md text-base font-medium transition-colors  disabled:pointer-events-none disabled:opacity-50 hover:cursor-pointer text-white/70`,
+  `${NS}-btn glass inline-flex items-center justify-center rounded-md text-base font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 hover:cursor-pointer text-white/70`,
   {
     variants: {
       variant: {
         filled: `${NS}-filled !text-white/80 hover:brightness-125 active:brightness-110`,
-        outline: `${NS}-outline border-solid border-2  backdrop-blur-0 hover:brightness-125 active:brightness-110`,
+        outline: `${NS}-outline border-solid border-2 backdrop-blur-0 hover:brightness-125 active:brightness-110`,
         ghost: `${NS}-ghost backdrop-blur-0 shadow-none hover:brightness-125 active:brightness-110`,
-        link: `${NS}-link !bg-transparent backdrop-blur-0 shadow-none hover:underline transform active:scale-[98%]`,
+        link: `${NS}-link !bg-transparent backdrop-blur-0 shadow-none hover:underline underline-offset-2 transform active:scale-[98%]`,
         'inline-link': `${NS}-inline-link !bg-transparent backdrop-blur-0 shadow-none hover:underline !p-0 !h-fit !w-fit transform active:scale-[98%]`,
       },
       size: {
