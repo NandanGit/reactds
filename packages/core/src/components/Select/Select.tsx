@@ -10,6 +10,7 @@ const SelectGroup = SelectPrimitive.Group;
 const SelectValue = SelectPrimitive.Value;
 
 const Select: typeof SelectRoot & {
+	Root: typeof SelectRoot;
 	Group: typeof SelectGroup;
 	Value: typeof SelectValue;
 	Trigger: typeof SelectTrigger;
@@ -19,6 +20,7 @@ const Select: typeof SelectRoot & {
 	Separator: typeof SelectSeparator;
 } = (props) => <SelectRoot {...props} />;
 
+Select.Root = SelectRoot;
 Select.Group = SelectGroup;
 Select.Value = SelectValue;
 Select.Trigger = SelectTrigger;
