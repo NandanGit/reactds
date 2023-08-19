@@ -7,8 +7,8 @@
 	"scripts": {
 		"start": "npm run start -w @reactds/core",
 		"sandbox": "npm run dev -w sandbox",
-		"update-versions": "lerna version --no-private",
-		"publish-versions": "npm run update-versions && lerna publish --no-private"
+		"lerna-update": "lerna version --no-private",
+		"lerna-publish": "lerna publish --no-private"
 	},
 	"devDependencies": {
 		"@reactds/coorg": "^0.0.5",
