@@ -1,10 +1,26 @@
+import React, { useState } from 'react';
 import './App.css';
 import { ButtonGallery } from './Galleries/ButtonGallery';
+import { SelectGallery } from './Galleries/SelectGallery';
+
+const COMPONENTS = ['button', 'select'] as const;
+type ComponentName = (typeof COMPONENTS)[number];
+
+const GALLERY_MAP: Record<ComponentName, React.FC> = {
+	button: ButtonGallery,
+	select: SelectGallery,
+} as const;
 
 function App() {
+	const [currentComponentName, setCurrentComponentName] =
+		useState<ComponentName>('select');
+	setCurrentComponentName; // Use this later to change the gallery
+
+	const CurrentGallery = GALLERY_MAP[currentComponentName];
+
 	return (
 		<>
-			<ButtonGallery />
+			<CurrentGallery />
 
 			{/* Background */}
 			<div className='background'>

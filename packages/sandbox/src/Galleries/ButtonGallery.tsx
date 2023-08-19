@@ -93,3 +93,5 @@ export const ButtonGallery: React.FC<ButtonGalleryProps> = () => {
 		</Container>
 	);
 };
+
+ButtonGallery.displayName = 'ButtonGallery';
