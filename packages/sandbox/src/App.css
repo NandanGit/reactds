@@ -13,6 +13,8 @@
 	width: 100%;
 	height: 100%;
 
+	opacity: 0.5;
+
 	/* Experiment */
 
 	/* animation: background-animation 10s linear infinite; */
@@ -27,35 +29,35 @@
 .gradient.gradient-1 {
 	top: -100%;
 	left: -100%;
-	background: radial-gradient(circle, #da1eff77 -30%, #0000 20%);
+	background: radial-gradient(circle, #64007877 -30%, #0000 20%);
 	animation: gradient-1-animation 10s linear infinite;
 }
 
 .gradient.gradient-2 {
 	top: -150%;
 	left: -150%;
-	background: radial-gradient(circle, #ff1eb077 -30%, #0000 20%);
+	background: radial-gradient(circle, #77004d77 -30%, #0000 20%);
 	animation: gradient-2-animation 72s linear infinite;
 }
 
 .gradient.gradient-3 {
 	top: -50%;
 	left: -50%;
-	background: radial-gradient(circle, #1eb0ff77 -30%, #0000 20%);
+	background: radial-gradient(circle, #004f7977 -30%, #0000 20%);
 	animation: gradient-3-animation 48s linear infinite;
 }
 
 .gradient.gradient-4 {
 	top: -150%;
 	left: -50%;
-	background: radial-gradient(circle, #1eff2677 -30%, #0000 20%);
+	background: radial-gradient(circle, #007b0477 -30%, #0000 20%);
 	animation: gradient-4-animation 64s linear infinite;
 }
 
 .gradient.gradient-5 {
 	top: -50%;
 	left: -150%;
-	background: radial-gradient(circle, #ffff1e77 -30%, #0000 20%);
+	background: radial-gradient(circle, #7e7e0077 -30%, #0000 20%);
 	animation: gradient-5-animation 56s linear infinite;
 }
 
