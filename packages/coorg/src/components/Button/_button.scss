@@ -7,7 +7,7 @@
       @apply text-white/80 border-transparent;
 
       &.#{$ns}-default {
-        @apply glass rounded-md text-white/80 border-solid border-transparent;
+        @apply glass text-white/80 border-solid border-transparent;
       }
 
       &.#{$ns}-primary {

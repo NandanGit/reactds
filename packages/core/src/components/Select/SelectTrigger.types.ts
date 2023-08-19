@@ -7,7 +7,7 @@ export interface SelectTriggerProps
 	extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>,
 		CommonProps<SelectTriggerVariations> {
 	icon?: React.ReactNode;
-	showIcon?: boolean;
+	hideIcon?: boolean;
 	iconClassName?: string;
 	iconStyle?: React.CSSProperties;
 }

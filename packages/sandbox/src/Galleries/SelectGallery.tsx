@@ -8,13 +8,13 @@ export interface SelectGalleryProps
 export const SelectGallery: React.FC<SelectGalleryProps> = () => {
 	return (
 		<Container>
-			<Select>
+			<Select disabled>
 				<Select.Item value='dark'>Dark</Select.Item>
 				<Select.Item value='light'>Light</Select.Item>
 				<Select.Item value='system'>System</Select.Item>
 			</Select>
 			<Select.Root>
-				<Select.Trigger>
+				<Select.Trigger icon={<div className='ml-2'>⬇️</div>}>
 					<Select.Value placeholder='Theme' />
 				</Select.Trigger>
 				<Select.Content>

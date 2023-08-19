@@ -11,7 +11,7 @@ export const Surface: React.FC<SurfaceProps> = ({
   ...props
 }) => {
   return (
-    <div className={clsx(className, 'glass p-4')} {...props}>
+    <div className={clsx(className, 'glass rounded-xl p-4')} {...props}>
       {children}
     </div>
   );

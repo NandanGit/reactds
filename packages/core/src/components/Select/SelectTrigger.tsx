@@ -16,7 +16,7 @@ export const SelectTrigger = React.forwardRef<
 			intent,
 			variations,
 			icon,
-			showIcon = true,
+			hideIcon = false,
 			iconClassName,
 			iconStyle,
 			...props
@@ -33,7 +33,7 @@ export const SelectTrigger = React.forwardRef<
 			{...props}
 		>
 			{children}
-			{showIcon && (
+			{!hideIcon && (
 				<SelectPrimitive.Icon asChild>
 					{icon || (
 						<CaretSortIcon

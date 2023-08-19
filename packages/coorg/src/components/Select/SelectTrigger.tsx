@@ -5,16 +5,18 @@ import {
 
 import { forwardRef } from 'react';
 import { selectTriggerVariations } from './SelectTrigger.classes';
+import { clsx } from 'clsx';
 
 export type SelectTriggerProps = PrimitiveSelectTriggerProps & {};
 
 export const SelectTrigger = forwardRef<
   React.ElementRef<typeof PrimitiveSelect.Trigger>,
   SelectTriggerProps
->(({ ...props }, ref) => {
+>(({ iconClassName, ...props }, ref) => {
   return (
     <PrimitiveSelect.Trigger
       variations={selectTriggerVariations}
+      iconClassName={clsx(iconClassName, 'ml-2')}
       {...props}
       ref={ref}
     />
