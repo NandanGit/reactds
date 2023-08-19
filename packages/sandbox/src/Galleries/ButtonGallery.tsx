@@ -30,9 +30,9 @@ export const ButtonGallery: React.FC<ButtonGalleryProps> = () => {
 		'warning',
 	];
 	return (
-		<Container spread horizontal>
+		<Container>
 			{[
-				<Container transparent style={{ alignItems: 'flex-end' }} key='names'>
+				<Container.Portion style={{ alignItems: 'flex-end' }} key='names'>
 					{[
 						...variants.map((variant) => (
 							<Button
@@ -61,9 +61,9 @@ export const ButtonGallery: React.FC<ButtonGalleryProps> = () => {
 							</Button>
 						)),
 					]}
-				</Container>,
+				</Container.Portion>,
 				...intents.map((intent) => (
-					<Container transparent style={{ alignItems: 'stretch' }} key={intent}>
+					<Container.Portion style={{ alignItems: 'stretch' }} key={intent}>
 						{[
 							...variants.map((variant) => (
 								<Button
@@ -87,7 +87,7 @@ export const ButtonGallery: React.FC<ButtonGalleryProps> = () => {
 								</Button>
 							)),
 						]}
-					</Container>
+					</Container.Portion>
 				)),
 			]}
 		</Container>

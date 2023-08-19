@@ -1,5 +1,4 @@
 import React from 'react';
-import { clsx } from 'clsx';
 import { Surface } from '@reactds/coorg';
 
 export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -17,9 +16,9 @@ const Container: React.FC<ContainerProps> & {
 	style = {},
 	children,
 	gap = '1rem',
-	spread = false,
+	spread = true,
 	transparent = false,
-	horizontal = false,
+	horizontal = true,
 	reverse = false,
 	...props
 }) => {
@@ -49,55 +48,24 @@ const Container: React.FC<ContainerProps> & {
 			}}
 			{...props}
 		>
-			{/* <Surface
-				className={clsx(
-					className,
-					{
-						'flex justify-center items-center gap-2': true,
-						'flex-row': horizontal && !reverse,
-						'flex-col': !horizontal && !reverse,
-						'flex-row-reverse': horizontal && reverse,
-						'flex-col-reverse': !horizontal && reverse,
-					}
-					// 'min-w-[80%] min-h-[80%]',
-				)}
-			> */}
 			{children}
 		</Surface>
 	);
 };
 
-export interface PortionProps extends React.HTMLAttributes<HTMLDivElement> {
-	title?: string;
-	horizontal?: boolean;
-	reverse?: boolean;
-}
+export interface PortionProps extends ContainerProps {}
 
 const Portion: React.FC<PortionProps> = ({
 	children,
-	className = '',
-	title,
+	spread = false,
 	horizontal = false,
-	reverse = false,
+	transparent = true,
 	...props
 }) => {
 	return (
-		<div
-			className={clsx(className, 'flex justify-between items-center gap-2', {
-				'flex-row': horizontal && !reverse,
-				'flex-col': !horizontal && !reverse,
-				'flex-row-reverse': horizontal && reverse,
-				'flex-col-reverse': !horizontal && reverse,
-			})}
-			{...props}
-		>
-			{title && (
-				<span className='text-center font-bold tracking-wider uppercase'>
-					{title}
-				</span>
-			)}
+		<Container {...{ spread, horizontal, transparent }} {...props}>
 			{children}
-		</div>
+		</Container>
 	);
 };
 
