@@ -3,7 +3,7 @@ import { cva } from 'class-variance-authority';
 import { NS } from '../../constants';
 
 export const selectTriggerVariations = cva<SelectTriggerVariations>(
-  `${NS}-select-trigger`,
+  `${NS}-select--trigger`,
   {
     variants: {
       intent: {
