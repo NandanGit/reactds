@@ -5,11 +5,13 @@
 
 body {
 	background-color: #181818;
+	font-family: sans-serif;
 }
 
 #root {
 	height: 100vh;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;

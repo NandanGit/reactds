@@ -8,10 +8,10 @@ export const buttonVariations = cva<ButtonVariations>(
     variants: {
       variant: {
         filled: `${NS}-filled !text-white/80 hover:brightness-125 active:brightness-110`,
-        outline: `${NS}-outline border-solid border-2 backdrop-blur-0 hover:brightness-125 active:brightness-110`,
-        ghost: `${NS}-ghost backdrop-blur-0 shadow-none hover:brightness-125 active:brightness-110`,
-        link: `${NS}-link !bg-transparent backdrop-blur-0 shadow-none hover:underline underline-offset-2 transform active:scale-[98%]`,
-        'inline-link': `${NS}-inline-link !bg-transparent backdrop-blur-0 shadow-none hover:underline !p-0 !h-fit !w-fit transform active:scale-[98%]`,
+        outline: `${NS}-outline border-solid border-glass/50 border-2 backdrop-blur-0 hover:brightness-125 active:brightness-110`,
+        ghost: `${NS}-ghost backdrop-blur-0 shadow-none hover:brightness-125 active:brightness-110 border-transparent`,
+        link: `${NS}-link !bg-transparent backdrop-blur-0 shadow-none hover:underline underline-offset-2 focus-visible:underline transform active:scale-[98%]`,
+        'inline-link': `${NS}-inline-link !bg-transparent backdrop-blur-0 shadow-none hover:underline focus-visible:underline !p-0 !h-fit !w-fit transform active:scale-[98%]`,
       },
       size: {
         sm: `${NS}-sm h-8 px-3 text-sm`,
@@ -33,5 +33,5 @@ export const buttonVariations = cva<ButtonVariations>(
       size: 'md',
       intent: 'default',
     },
-  }
+  },
 );

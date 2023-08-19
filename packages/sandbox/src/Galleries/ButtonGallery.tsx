@@ -1,0 +1,95 @@
+import React from 'react';
+import { Container } from '../Container';
+import { Button, ButtonProps } from '@reactds/coorg';
+
+export interface ButtonGalleryProps
+	extends React.HTMLAttributes<HTMLDivElement> {
+	className?: string;
+}
+
+export const ButtonGallery: React.FC<ButtonGalleryProps> = () => {
+	const variants: ButtonProps['variant'][] = [
+		'filled',
+		'outline',
+		'ghost',
+		'link',
+		// 'inline-link',
+	];
+	const pillVariants: ButtonProps['variant'][] = [
+		'ghost',
+		'outline',
+		'filled', //
+	];
+	const intents: ButtonProps['intent'][] = [
+		'default',
+		'primary',
+		'secondary',
+		'success',
+		'danger',
+		'info',
+		'warning',
+	];
+	return (
+		<Container spread horizontal>
+			{[
+				<Container transparent style={{ alignItems: 'flex-end' }} key='names'>
+					{[
+						...variants.map((variant) => (
+							<Button
+								size='sm'
+								// {...{ variant }}
+								// className='capitalize'
+								variant='ghost'
+								disabled
+								style={{ textTransform: 'uppercase' }}
+								key={variant}
+							>
+								{variant}
+							</Button>
+						)),
+						...pillVariants.map((variant) => (
+							<Button
+								size='sm'
+								// {...{ variant }}
+								// className='capitalize'
+								variant='ghost'
+								disabled
+								style={{ textTransform: 'uppercase' }}
+								key={variant + '-pill'}
+							>
+								pill {variant}
+							</Button>
+						)),
+					]}
+				</Container>,
+				...intents.map((intent) => (
+					<Container transparent style={{ alignItems: 'stretch' }} key={intent}>
+						{[
+							...variants.map((variant) => (
+								<Button
+									size='sm'
+									{...{ variant, intent }}
+									className='capitalize'
+									key={variant}
+								>
+									{intent}
+								</Button>
+							)),
+							...pillVariants.map((variant) => (
+								<Button
+									size='sm'
+									pill
+									{...{ variant, intent }}
+									className='capitalize'
+									key={variant + '-pill'}
+								>
+									{intent}
+								</Button>
+							)),
+						]}
+					</Container>
+				)),
+			]}
+		</Container>
+	);
+};

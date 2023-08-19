@@ -1,28 +1,10 @@
 import './App.css';
-import { Button, Surface } from '@reactds/coorg';
+import { ButtonGallery } from './Galleries/ButtonGallery';
 
 function App() {
 	return (
 		<>
-			<Surface
-				style={{
-					minWidth: '80%',
-					height: '80%',
-					display: 'flex',
-					justifyContent: 'center',
-					alignItems: 'center',
-					gap: '1rem',
-				}}
-			>
-				<Button
-					// intent='info'
-					// variant='filled'
-					// disabled
-					onClick={() => console.log('Clicked')}
-				>
-					Hello
-				</Button>
-			</Surface>
+			<ButtonGallery />
 
 			{/* Background */}
 			<div className='background'>

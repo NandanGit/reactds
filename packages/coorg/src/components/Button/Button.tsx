@@ -19,7 +19,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         variations={buttonVariations}
         className={clsx(className, {
           'w-full': full,
-          'rounded-full': pill,
+          '!rounded-full': pill,
         })}
         {...props}
       >
