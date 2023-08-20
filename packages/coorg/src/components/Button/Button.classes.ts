@@ -8,7 +8,7 @@ export const buttonVariations = cva<ButtonVariations>(
     variants: {
       variant: {
         filled: `${NS}-filled !text-white/80 hover:brightness-125 active:brightness-110`,
-        outline: `${NS}-outline border-solid border-glass/50 border-2 backdrop-blur-0 hover:brightness-125 active:brightness-110`,
+        outline: `${NS}-outline border-solid  border-2 backdrop-blur-0 hover:brightness-125 active:brightness-110`,
         ghost: `${NS}-ghost backdrop-blur-0 shadow-none hover:brightness-125 active:brightness-110 border-transparent`,
         link: `${NS}-link !bg-transparent backdrop-blur-0 shadow-none hover:underline underline-offset-2 focus-visible:underline transform active:scale-[98%]`,
         'inline-link': `${NS}-inline-link !bg-transparent backdrop-blur-0 shadow-none hover:underline focus-visible:underline !p-0 !h-fit !w-fit transform active:scale-[98%]`,
@@ -19,7 +19,7 @@ export const buttonVariations = cva<ButtonVariations>(
         lg: `${NS}-lg h-10 px-6 text-lg`,
       },
       intent: {
-        default: `${NS}-default`,
+        default: `${NS}-default border-glass/70`,
         primary: `${NS}-primary bg-primary-800/80 text-primary-500/50 shadow-primary-800/80 border-primary-800`,
         secondary: `${NS}-secondary bg-secondary-800/80 text-secondary-500/50 shadow-secondary-800/80 border-secondary-800`,
         info: `${NS}-info bg-info-800/80 text-info-500/50 shadow-info-800/80 border-info-800`,

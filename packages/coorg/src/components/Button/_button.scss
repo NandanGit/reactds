@@ -7,7 +7,9 @@
       @apply text-white/80 border-transparent;
 
       &.#{$ns}-default {
-        @apply glass text-white/80 border-solid border-transparent;
+        @apply glass text-white/80 border-solid border-transparent transition-colors;
+        transition-property: color, background-color, text-decoration-color,
+          fill, stroke;
       }
 
       &.#{$ns}-primary {
