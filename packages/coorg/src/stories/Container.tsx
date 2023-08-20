@@ -1,8 +1,8 @@
 import React from 'react';
-import { clsx } from 'clsx';
 import backgroundImage from '../stories/assets/leaves.png';
 import backgroundSvg from '../stories/assets/bg.svg';
 import { Surface } from '../components/Surface/Surface';
+import { cn } from '@reactds/core';
 
 export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
@@ -34,25 +34,8 @@ const Container: React.FC<ContainerProps> & {
       }}
       className="flex justify-center items-center"
     >
-      {/* <div
-        className={clsx(
-          'Container',
-          className,
-          {
-            'flex justify-center items-center gap-2': true,
-            'flex-row': horizontal && !reverse,
-            'flex-col': !horizontal && !reverse,
-            'flex-row-reverse': horizontal && reverse,
-            'flex-col-reverse': !horizontal && reverse,
-          },
-          'min-w-[80%] min-h-[80%] p-4',
-          'glass', // Glass look
-        )}
-        {...props}
-      > */}
       <Surface
-        className={clsx(
-          className,
+        className={cn(
           {
             'flex justify-center items-center gap-2': true,
             'flex-row': horizontal && !reverse,
@@ -60,6 +43,7 @@ const Container: React.FC<ContainerProps> & {
             'flex-row-reverse': horizontal && reverse,
             'flex-col-reverse': !horizontal && reverse,
           },
+          className,
           // 'min-w-[80%] min-h-[80%]',
         )}
       >
@@ -86,12 +70,16 @@ const Portion: React.FC<PortionProps> = ({
 }) => {
   return (
     <div
-      className={clsx(className, 'flex justify-between items-center gap-2', {
-        'flex-row': horizontal && !reverse,
-        'flex-col': !horizontal && !reverse,
-        'flex-row-reverse': horizontal && reverse,
-        'flex-col-reverse': !horizontal && reverse,
-      })}
+      className={cn(
+        'flex justify-between items-center gap-2',
+        {
+          'flex-row': horizontal && !reverse,
+          'flex-col': !horizontal && !reverse,
+          'flex-row-reverse': horizontal && reverse,
+          'flex-col-reverse': !horizontal && reverse,
+        },
+        className,
+      )}
       {...props}
     >
       {title && (

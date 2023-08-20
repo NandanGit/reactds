@@ -1,10 +1,10 @@
 import {
   Button as RDSButton,
   ButtonProps as RDSButtonProps,
+  cn,
 } from '@reactds/core';
 import { forwardRef } from 'react';
 import { buttonVariations } from './Button.classes';
-import { clsx } from 'clsx';
 
 export type ButtonProps = RDSButtonProps & {
   full?: boolean;
@@ -17,10 +17,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <RDSButton
         ref={ref}
         variations={buttonVariations}
-        className={clsx(className, {
-          'w-full': full,
-          '!rounded-full': pill,
-        })}
+        className={cn(
+          {
+            'w-full': full,
+            '!rounded-full': pill,
+          },
+          className,
+        )}
         {...props}
       >
         {children}
