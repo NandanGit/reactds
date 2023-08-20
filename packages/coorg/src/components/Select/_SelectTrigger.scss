@@ -1,0 +1,39 @@
+.#{$ns}-select--trigger {
+  // background-color: red;
+  &.#{$ns}-outline,
+  &.#{$ns}-ghost {
+    @apply glass-none;
+
+    &:hover {
+      @apply text-white/80 border-transparent;
+
+      &.#{$ns}-default {
+        @apply glass text-white/80 border-solid border-transparent;
+      }
+
+      &.#{$ns}-primary {
+        @apply bg-primary-800/40;
+      }
+
+      &.#{$ns}-secondary {
+        @apply bg-secondary-800/40;
+      }
+
+      &.#{$ns}-success {
+        @apply bg-success-800/40;
+      }
+
+      &.#{$ns}-danger {
+        @apply bg-danger-800/40;
+      }
+
+      &.#{$ns}-info {
+        @apply bg-info-800/40;
+      }
+
+      &.#{$ns}-warning {
+        @apply bg-warning-800/40;
+      }
+    }
+  }
+}

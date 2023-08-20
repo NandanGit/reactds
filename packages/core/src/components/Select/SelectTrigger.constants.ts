@@ -1,1 +1,1 @@
-export const selectTriggerVariants = ['filled', 'ghost'] as const;
+export const selectTriggerVariants = ['filled', 'outline', 'ghost'] as const;

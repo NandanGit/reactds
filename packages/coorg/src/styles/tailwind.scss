@@ -10,7 +10,7 @@
     box-shadow: inset -1px 1px 0 0 #8888880a;
   }
 
-  /* .glass {
-    @apply outline-none focus-visible:outline-primary-900 focus-visible:outline-1;
-  } */
+  .glass-none {
+    @apply bg-transparent backdrop-blur-0 shadow-none;
+  }
 }

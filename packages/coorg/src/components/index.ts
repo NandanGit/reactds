@@ -1,6 +1,6 @@
 // UI
-export { Surface, type SurfaceProps } from './Surface/Surface';
+export * from './Surface';
 
 // Functional
-export { Button, type ButtonProps } from './Button/Button';
-export { Select, type SelectProps } from './Select/Select';
+export * from './Button';
+export * from './Select';
