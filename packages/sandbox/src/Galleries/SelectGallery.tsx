@@ -40,7 +40,7 @@ export const SelectGallery: React.FC<SelectGalleryProps> = () => {
 						{variant}
 					</Button>
 					{intents.map((intent) => (
-						<Select.Root key={intent}>
+						<Select.Root key={intent} defaultOpen={intent === 'success'}>
 							<Select.Trigger {...{ intent, variant }}>
 								<Select.Value placeholder='Theme' />
 							</Select.Trigger>

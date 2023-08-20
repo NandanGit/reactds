@@ -1,38 +1,40 @@
 .#{$ns}-select--trigger {
   // background-color: red;
-  &.#{$ns}-outline,
+  &.#{$ns}-outline {
+    @apply glass-none;
+  }
   &.#{$ns}-ghost {
     @apply glass-none;
 
     &:hover {
-      @apply text-white/80 border-transparent;
+      @apply border-transparent;
 
       &.#{$ns}-default {
-        @apply glass text-white/80 border-solid border-transparent;
+        @apply glass text-white/80;
       }
 
       &.#{$ns}-primary {
-        @apply bg-primary-800/40;
+        @apply bg-primary-800/20;
       }
 
       &.#{$ns}-secondary {
-        @apply bg-secondary-800/40;
+        @apply bg-secondary-800/20;
       }
 
       &.#{$ns}-success {
-        @apply bg-success-800/40;
+        @apply bg-success-800/20;
       }
 
       &.#{$ns}-danger {
-        @apply bg-danger-800/40;
+        @apply bg-danger-800/20;
       }
 
       &.#{$ns}-info {
-        @apply bg-info-800/40;
+        @apply bg-info-800/20;
       }
 
       &.#{$ns}-warning {
-        @apply bg-warning-800/40;
+        @apply bg-warning-800/20;
       }
     }
   }
