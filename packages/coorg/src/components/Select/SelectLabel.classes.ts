@@ -3,7 +3,7 @@ import { cva } from 'class-variance-authority';
 import { NS } from '../../constants';
 
 export const selectLabelVariations = cva<SelectLabelVariations>(
-  `${NS}-select--label`,
+  `${NS}-select--label px-2 py-1.5 text-sm font-semibold text-mute`,
   {
     variants: {
       intent: {

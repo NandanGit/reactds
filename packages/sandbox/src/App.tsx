@@ -2,25 +2,59 @@ import React, { useState } from 'react';
 import './App.css';
 import { ButtonGallery } from './Galleries/ButtonGallery';
 import { SelectGallery } from './Galleries/SelectGallery';
+import { Select } from '@reactds/coorg';
+import { pascalToTitleCase } from './utils/string';
 
-const COMPONENTS = ['button', 'select'] as const;
-type ComponentName = (typeof COMPONENTS)[number];
+const COMPONENT_NAMES = ['button', 'select'] as const;
+type ComponentName = (typeof COMPONENT_NAMES)[number];
 
 const GALLERY_MAP: Record<ComponentName, React.FC> = {
 	button: ButtonGallery,
 	select: SelectGallery,
 } as const;
 
+const DEFAULT_COMPONENT_NAME =
+	(localStorage.getItem('current_component') as ComponentName) || 'button';
+
 function App() {
 	const [currentComponentName, setCurrentComponentName] =
-		useState<ComponentName>('select');
+		useState<ComponentName>(DEFAULT_COMPONENT_NAME);
 	setCurrentComponentName; // Use this later to change the gallery
 
 	const CurrentGallery = GALLERY_MAP[currentComponentName];
 
 	return (
 		<>
+			<Select.Root
+				onValueChange={(value) => {
+					localStorage.setItem('current_component', value);
+					setCurrentComponentName(value as ComponentName);
+				}}
+				defaultValue={DEFAULT_COMPONENT_NAME}
+			>
+				<Select.Trigger
+					style={
+						{
+							// position: 'absolute',
+							// top: '1rem',
+							// left: '50%',
+							// transform: 'translateX(-50%)',
+						}
+					}
+				>
+					<Select.Value placeholder='Choose Gallery' />
+				</Select.Trigger>
+				<Select.Content position='popper'>
+					{COMPONENT_NAMES.map((componentName) => (
+						<Select.Item key={componentName} value={componentName}>
+							{pascalToTitleCase(GALLERY_MAP[componentName].displayName || '')}
+						</Select.Item>
+					))}
+				</Select.Content>
+			</Select.Root>
+
 			<CurrentGallery />
+			{/* <CurrentGallery /> */}
 
 			{/* Background */}
 			<div className='background'>

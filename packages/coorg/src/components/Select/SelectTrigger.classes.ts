@@ -4,7 +4,7 @@ import { NS } from '../../constants';
 
 export const selectTriggerVariations = cva<SelectTriggerVariations>(
   //  flex h-9  items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50
-  `${NS}-select--trigger glass flex h-9 items-center justify-between px-3 py-2 text-sm disabled:cursor-not-allowed disabled:opacity-50 hover:cursor-pointer border-opacity-60`,
+  `${NS}-select--trigger glass flex h-9 items-center justify-between px-3 py-2 text-sm disabled:cursor-not-allowed disabled:opacity-50 hover:cursor-pointer border-opacity-60 focus-visible:glass-outline`,
   {
     variants: {
       intent: {

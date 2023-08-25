@@ -3,7 +3,7 @@ import { cva } from 'class-variance-authority';
 import { NS } from '../../constants';
 
 export const buttonVariations = cva<ButtonVariations>(
-  `${NS}-btn glass inline-flex items-center justify-center text-base font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 hover:cursor-pointer text-white/70`,
+  `${NS}-btn glass inline-flex items-center justify-center text-base font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 hover:cursor-pointer text-white/70 focus-visible:glass-outline`,
   {
     variants: {
       variant: {

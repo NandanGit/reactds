@@ -16,7 +16,7 @@ const Container: React.FC<ContainerProps> & {
 	style = {},
 	children,
 	gap = '1rem',
-	spread = true,
+	spread = false,
 	transparent = false,
 	horizontal = true,
 	reverse = false,

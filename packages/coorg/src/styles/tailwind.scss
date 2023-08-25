@@ -6,11 +6,16 @@
 @layer components {
   .glass {
     @apply bg-glass bg-opacity-20 rounded-md backdrop-blur-xl border-none text-white/70;
-    @apply outline-none focus-visible:outline-primary-900 focus-visible:outline-2;
+    // @apply outline-none focus-visible:outline-primary-900 focus-visible:outline-2;
+    @apply outline-none;
     box-shadow: inset -1px 1px 0 0 #8888880a;
   }
 
   .glass-none {
     @apply bg-transparent backdrop-blur-0 shadow-none;
+  }
+
+  .glass-outline {
+    @apply outline-none focus-visible:outline-primary-900 focus-visible:outline-2;
   }
 }

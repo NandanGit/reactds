@@ -3,7 +3,7 @@ import { cva } from 'class-variance-authority';
 import { NS } from '../../constants';
 
 export const selectSeparatorVariations = cva<SelectSeparatorVariations>(
-  `${NS}-select--separator`,
+  `${NS}-select--separator glass  h-px`,
   {
     variants: {
       intent: {
