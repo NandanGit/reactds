@@ -5,7 +5,7 @@ import { NS } from '../../constants';
 export const selectItemVariations = cva<SelectItemVariations>(
   cn(
     `${NS}-select--item`,
-    'relative flex w-full rounded-md data-[highlighted]:glass hover:cursor-pointer mb-1 last:mb-0  select-none items-center py-0.5 px-2 text-sm outline-none data-[state="checked"]:brightness-125 data-[state="checked"]:glass data-[disabled]:pointer-events-none data-[disabled]:opacity-50 ',
+    'relative flex w-full rounded-md data-[highlighted]:glass hover:cursor-pointer mb-1 last:mb-0  select-none items-center py-0.5 px-2 text-sm outline-none data-[state="checked"]:brightness-125 data-[state="checked"]:glass data-[disabled]:pointer-events-none data-[disabled]:opacity-50 font-sans',
   ),
   {
     variants: {
