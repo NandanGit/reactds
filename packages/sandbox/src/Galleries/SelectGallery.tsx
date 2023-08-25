@@ -40,26 +40,23 @@ export const SelectGallery: React.FC<SelectGalleryProps> = () => {
 						{variant}
 					</Button>
 					{intents.map((intent) => (
-						<Select.Root
-							key={intent}
-							// defaultValue='system'
-							defaultOpen={intent === 'primary' && variant === 'filled'}
+						<Select
+							defaultValue='system'
+							intent={intent}
+							variant={variant}
+							contentIntent={intent}
 						>
-							<Select.Trigger {...{ intent, variant }}>
-								<Select.Value placeholder='Theme' />
-							</Select.Trigger>
-							<Select.Content position='popper' intent={intent}>
-								<Select.Item value='dark'>Dark</Select.Item>
-								<Select.Item value='light'>Light </Select.Item>
-								<Select.Separator />
-								<Select.Group>
-									<Select.Label>Others</Select.Label>
-									<Select.Item value='odyssey'>Odyssey</Select.Item>
-									<Select.Item value='sea-shore'>Sea Shore</Select.Item>
-									<Select.Item value='twilight'>Twilight</Select.Item>
-								</Select.Group>
-							</Select.Content>
-						</Select.Root>
+							<Select.Item value='dark'>Dark</Select.Item>
+							<Select.Item value='light'>Light </Select.Item>
+							<Select.Item value='system'>System </Select.Item>
+							<Select.Separator />
+							<Select.Group>
+								<Select.Label>Others</Select.Label>
+								<Select.Item value='odyssey'>Odyssey</Select.Item>
+								<Select.Item value='sea-shore'>Sea Shore</Select.Item>
+								<Select.Item value='twilight'>Twilight</Select.Item>
+							</Select.Group>
+						</Select>
 					))}
 				</Container.Portion>
 			))}
