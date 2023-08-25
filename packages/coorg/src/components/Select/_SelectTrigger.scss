@@ -1,0 +1,41 @@
+.#{$ns}-select--trigger {
+  // background-color: red;
+  &.#{$ns}-outline {
+    @apply glass-none;
+  }
+  &.#{$ns}-ghost {
+    @apply glass-none;
+
+    &:hover {
+      @apply border-transparent;
+
+      &.#{$ns}-default {
+        @apply glass text-white/80;
+      }
+
+      &.#{$ns}-primary {
+        @apply bg-primary-800/20;
+      }
+
+      &.#{$ns}-secondary {
+        @apply bg-secondary-800/20;
+      }
+
+      &.#{$ns}-success {
+        @apply bg-success-800/20;
+      }
+
+      &.#{$ns}-danger {
+        @apply bg-danger-800/20;
+      }
+
+      &.#{$ns}-info {
+        @apply bg-info-800/20;
+      }
+
+      &.#{$ns}-warning {
+        @apply bg-warning-800/20;
+      }
+    }
+  }
+}

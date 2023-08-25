@@ -1,5 +1,6 @@
 {
 	"name": "@reactds/prettier-config",
+	"private": true,
 	"version": "1.0.0",
 	"description": "prettier config for the whole scope",
 	"main": "index.json",

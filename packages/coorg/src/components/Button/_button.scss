@@ -1,0 +1,40 @@
+.#{$ns}-btn {
+  &.#{$ns}-outline,
+  &.#{$ns}-ghost {
+    @apply bg-transparent;
+
+    &:hover {
+      @apply text-white/80 border-transparent;
+
+      &.#{$ns}-default {
+        @apply glass text-white/80 border-solid border-transparent transition-colors;
+        transition-property: color, background-color, text-decoration-color,
+          fill, stroke;
+      }
+
+      &.#{$ns}-primary {
+        @apply bg-primary-800/80;
+      }
+
+      &.#{$ns}-secondary {
+        @apply bg-secondary-800/80;
+      }
+
+      &.#{$ns}-success {
+        @apply bg-success-800/80;
+      }
+
+      &.#{$ns}-danger {
+        @apply bg-danger-800/80;
+      }
+
+      &.#{$ns}-info {
+        @apply bg-info-800/80;
+      }
+
+      &.#{$ns}-warning {
+        @apply bg-warning-800/80;
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "@reactds/coorg",
-  "version": "0.0.0",
+  "version": "0.2.2",
   "description": "> TODO: Write description",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -10,11 +10,14 @@
   ],
   "types": "dist/index.d.ts",
   "scripts": {
-    "start": "rollup -c --watch",
-    "build": "rm -rf dist && rollup -c",
+    "start": "rollup -c rollup.config.dev.mjs --watch",
+    "build": "rm -rf dist && rollup -c rollup.config.dev.mjs && node scripts/cleanupCSSImportsFromDeclarationFiles.js && rollup -c rollup.config.prod.mjs",
+    "build:dependencies": "cd ../core && npm run build",
+    "build:through": "npm run build:dependencies && npm run build",
     "lint:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepack": "npm run build:through && npm run build"
   },
   "keywords": [],
   "author": "Nandan Reddy <nandan.reddy1133@gmail.com>",
@@ -64,6 +67,8 @@
     "rollup-plugin-dts": "^5.3.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-scss": "^4.0.0",
+    "sass": "^1.65.1",
     "storybook": "^7.2.3",
     "tailwindcss": "^3.3.3",
     "tslib": "^2.6.1",
