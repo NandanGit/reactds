@@ -13,3 +13,17 @@ export type CommonProps<T> = VariantProps<VariationsType<T>> & {
 	variations?: VariationsType<T>;
 	asChild?: boolean;
 };
+
+export type IconProps = {
+	icon?: React.ReactNode;
+	hideIcon?: boolean;
+	iconClassName?: string;
+	iconStyle?: React.CSSProperties;
+};
+
+export type IconContainerProps = {
+	iconContainerClassName?: string;
+	iconContainerStyle?: React.CSSProperties;
+};
+
+export type IconWithContainerProps = IconProps & IconContainerProps;

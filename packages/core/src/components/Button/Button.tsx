@@ -17,7 +17,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 		const Comp = asChild ? Slot : 'button';
 		return (
 			<Comp
-				className={cn(variations?.({ variant, size, intent, className }))}
+				className={cn(variations?.({ variant, size, intent }), className)}
 				ref={ref}
 				{...props}
 			/>
@@ -26,5 +26,3 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 Button.displayName = 'Button';
-
-// export { Button };
