@@ -1,6 +1,7 @@
 import React from 'react';
-import { Container } from '../Container';
+
 import { Button, ButtonProps } from '@reactds/coorg';
+import { Container } from '../components/Container';
 
 export interface ButtonGalleryProps
 	extends React.HTMLAttributes<HTMLDivElement> {

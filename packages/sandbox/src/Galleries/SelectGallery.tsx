@@ -1,6 +1,7 @@
 import React from 'react';
-import { Container } from '../Container';
+
 import { Button, Select, SelectTriggerProps } from '@reactds/coorg';
+import { Container } from '../components/Container';
 
 export interface SelectGalleryProps
 	extends React.HTMLAttributes<HTMLDivElement> {}

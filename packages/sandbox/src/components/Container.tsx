@@ -1,22 +1,18 @@
 import React from 'react';
-import { Select, Surface } from '@reactds/coorg';
-import { Any } from './types';
-import { capitalize } from './utils/string';
+import { Surface } from '@reactds/coorg';
 
-export type ContainerControl<T extends string> = {
-	state: T;
-	setState: React.Dispatch<React.SetStateAction<Any>>;
-	options: T[] | [T, string][];
-};
-export interface ContainerProps<TControlState extends string = string>
-	extends React.HTMLAttributes<HTMLDivElement> {
+import './Container.css';
+import { Control } from './control/Control';
+import { ContainerControl } from './control/Control.types';
+
+export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
 	horizontal?: boolean;
 	reverse?: boolean;
 	gap?: number | string;
 	spread?: boolean;
 	transparent?: boolean;
 
-	controls?: ContainerControl<TControlState>[];
+	controls?: ContainerControl[];
 }
 
 const Container: React.FC<ContainerProps> & {
@@ -53,6 +49,7 @@ const Container: React.FC<ContainerProps> & {
 				display: 'flex',
 				justifyContent: 'center',
 				alignItems: 'center',
+				marginTop: controls ? '5rem' : 0,
 				// flex: '1',
 				gap,
 
@@ -72,47 +69,14 @@ const Container: React.FC<ContainerProps> & {
 						right: 0,
 
 						display: 'flex',
+						alignItems: 'stretch',
 						flexDirection: 'row-reverse',
 						gap: '0.5rem',
 					}}
 				>
-					{controls?.map((control) => {
-						// const selectOptions = control.options.map(option => {
-						// 		if(Array.isArray(option)){
-						// 			return option
-						// 		}
-						// })
-						return (
-							<Select
-								triggerProps={{
-									style: {
-										// position: 'absolute',
-										// bottom: '100%',
-										// transform: 'translateY(-1rem)',
-										// right: 0,
-									},
-								}}
-								value={control.state}
-								// intent='info'
-								// contentIntent='info'
-								onValueChange={(value) => control.setState(value)}
-							>
-								{/* <Select.Item value='sm'>Small</Select.Item>
-								<Select.Item value='md'>Medium</Select.Item>
-								<Select.Item value='lg'>Large</Select.Item> */}
-								{control.options.map((option) => {
-									const selectOption = Array.isArray(option)
-										? option
-										: ([option, capitalize(option)] as const);
-									return (
-										<Select.Item value={selectOption[0]}>
-											{selectOption[1]}
-										</Select.Item>
-									);
-								})}
-							</Select>
-						);
-					})}
+					{controls?.map((control) => (
+						<Control key={control.name} control={control} />
+					))}
 				</div>
 			) : null}
 		</Surface>

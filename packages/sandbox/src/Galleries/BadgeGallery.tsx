@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Container } from '../Container';
-import { Badge, BadgeProps, Select } from '@reactds/coorg';
+
+import { Badge, BadgeProps } from '@reactds/coorg';
+import { Container } from '../components/Container';
 
 export interface BadgeGalleryProps
 	extends React.HTMLAttributes<HTMLDivElement> {
@@ -13,11 +14,6 @@ export const BadgeGallery: React.FC<BadgeGalleryProps> = () => {
 		'soft',
 		'outline',
 		// 'inline-link',
-	];
-	const pillVariants: BadgeProps['variant'][] = [
-		'outline',
-		'soft',
-		'filled', //
 	];
 	const intents: BadgeProps['intent'][] = [
 		'default',
@@ -33,15 +29,24 @@ export const BadgeGallery: React.FC<BadgeGalleryProps> = () => {
 	const [badgeSize, setBadgeSize] =
 		useState<Exclude<BadgeProps['size'], null | undefined>>('md');
 
+	const [showRemoveIcon, setShowRemoveIcon] = useState(true);
+
+	const [badgeShape, setBadgeShape] = useState<'pill' | 'normal'>('normal');
+
+	const labelStyle: React.CSSProperties = {
+		textTransform: 'uppercase',
+		background: 'none',
+		backdropFilter: 'none',
+		boxShadow: 'none',
+		opacity: 0.5,
+	};
+
 	return (
 		<Container
 			controls={[
-				// {
-				// 	state: badgeSize,
-				// 	setState: setBadgeSize,
-				// 	options: ['sm', 'md', 'lg'],
-				// },
 				{
+					type: 'select',
+					name: 'Size',
 					state: badgeSize,
 					setState: setBadgeSize,
 					options: [
@@ -50,85 +55,44 @@ export const BadgeGallery: React.FC<BadgeGalleryProps> = () => {
 						['lg', 'Large'],
 					],
 				},
+				{
+					name: 'Show Remove Icon',
+					type: 'switch',
+					state: showRemoveIcon,
+					setState: setShowRemoveIcon,
+				},
+				{
+					type: 'select',
+					name: 'Shape',
+					state: badgeShape,
+					setState: setBadgeShape,
+					options: ['pill', 'normal'],
+				},
 			]}
 		>
-			{/* <Select
-				triggerProps={{
-					style: {
-						position: 'absolute',
-						bottom: '100%',
-						transform: 'translateY(-1rem)',
-						right: 0,
-					},
-				}}
-				defaultValue='md'
-				// intent='info'
-				// contentIntent='info'
-				onValueChange={(value) => setBadgeSize(value as typeof badgeSize)}
-			>
-				<Select.Item value='sm'>Small</Select.Item>
-				<Select.Item value='md'>Medium</Select.Item>
-				<Select.Item value='lg'>Large</Select.Item>
-			</Select> */}
-			{[
-				<Container.Portion style={{ alignItems: 'flex-end' }} key='names'>
-					{[
-						...variants.map((variant) => (
-							<Badge
-								size={badgeSize}
-								// {...{ variant }}
-								// className='capitalize'
-								variant='ghost'
-								disabled
-								style={{ textTransform: 'uppercase' }}
-								key={variant}
-							>
-								{variant}
-							</Badge>
-						)),
-						...pillVariants.map((variant) => (
-							<Badge
-								size={badgeSize}
-								// {...{ variant }}
-								// className='capitalize'
-								variant='ghost'
-								disabled
-								style={{ textTransform: 'uppercase' }}
-								key={variant + '-pill'}
-							>
-								pill {variant}
-							</Badge>
-						)),
-					]}
-				</Container.Portion>,
-				...intents.map((intent) => (
-					<Container.Portion style={{ alignItems: 'stretch' }} key={intent}>
-						{[
-							...variants.map((variant) => (
-								<Badge
-									size={badgeSize}
-									{...{ variant, intent }}
-									className='capitalize'
-									key={variant}
-								>
-									{intent}
-								</Badge>
-							)),
-							...pillVariants.map((variant) => (
-								<Badge
-									size={badgeSize}
-									pill
-									{...{ variant, intent }}
-									className='capitalize'
-									key={variant + '-pill'}
-								>
-									{intent}
-								</Badge>
-							)),
-						]}
-					</Container.Portion>
-				)),
-			]}
+			{variants.map((variant) => (
+				<Container.Portion key={variant} style={{ alignItems: 'stretch' }}>
+					<Badge size={badgeSize} style={labelStyle} key={variant}>
+						{variant}
+					</Badge>
+					{intents.map((intent) => (
+						<Badge
+							key={intent}
+							size={badgeSize}
+							{...{ intent, variant, showRemoveIcon }}
+							pill={badgeShape === 'pill'}
+							style={{ textTransform: 'capitalize' }}
+							onRemove={() => {
+								console.log(
+									`Delete request from Badge with intent: ${intent} and variant: ${variant}`
+								);
+							}}
+						>
+							{intent}
+						</Badge>
+					))}
+				</Container.Portion>
+			))}
 		</Container>
 	);
 };

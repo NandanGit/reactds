@@ -1,0 +1,26 @@
+.container-control {
+	position: relative;
+}
+
+.container-control:hover .container-control--name {
+	opacity: 1;
+	filter: brightness(0.8);
+}
+
+.container-control:focus-within .container-control--name {
+	opacity: 1;
+	filter: brightness(0.8);
+}
+
+.container-control--name {
+	opacity: 0;
+	filter: brightness(0);
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translate(-50%, -0.5rem);
+	min-width: 100%;
+	height: fit-content;
+	/* text-shadow: 0 0 1rem white; */
+	/* width: fit-content; */
+}
