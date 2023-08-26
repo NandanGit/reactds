@@ -33,6 +33,9 @@ function App() {
 					}}
 					placeholder='Choose Gallery'
 					defaultValue={DEFAULT_COMPONENT_NAME}
+					style={{
+						marginBottom: '2.5rem',
+					}}
 				>
 					{COMPONENT_NAMES.map((componentName) => (
 						<Select.Item key={componentName} value={componentName}>

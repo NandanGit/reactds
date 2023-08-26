@@ -30,11 +30,29 @@ export const BadgeGallery: React.FC<BadgeGalleryProps> = () => {
 	];
 
 	// const badgeSize:  = 'lg';
-	const [badgeSize, setBadgeSize] = useState<BadgeProps['size']>('md');
+	const [badgeSize, setBadgeSize] =
+		useState<Exclude<BadgeProps['size'], null | undefined>>('md');
 
 	return (
-		<Container>
-			<Select
+		<Container
+			controls={[
+				// {
+				// 	state: badgeSize,
+				// 	setState: setBadgeSize,
+				// 	options: ['sm', 'md', 'lg'],
+				// },
+				{
+					state: badgeSize,
+					setState: setBadgeSize,
+					options: [
+						['sm', 'Small'],
+						['md', 'Medium'],
+						['lg', 'Large'],
+					],
+				},
+			]}
+		>
+			{/* <Select
 				triggerProps={{
 					style: {
 						position: 'absolute',
@@ -51,7 +69,7 @@ export const BadgeGallery: React.FC<BadgeGalleryProps> = () => {
 				<Select.Item value='sm'>Small</Select.Item>
 				<Select.Item value='md'>Medium</Select.Item>
 				<Select.Item value='lg'>Large</Select.Item>
-			</Select>
+			</Select> */}
 			{[
 				<Container.Portion style={{ alignItems: 'flex-end' }} key='names'>
 					{[

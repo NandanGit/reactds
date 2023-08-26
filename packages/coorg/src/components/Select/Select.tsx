@@ -20,6 +20,8 @@ export type SelectProps = React.ComponentPropsWithoutRef<
   intent?: SelectTriggerProps['intent'];
   variant?: SelectTriggerProps['variant'];
   hideIcon?: SelectTriggerProps['hideIcon'];
+  className?: SelectTriggerProps['className'];
+  style?: SelectTriggerProps['style'];
 
   // Content props
   contentIntent?: SelectContentProps['intent'];
@@ -44,6 +46,8 @@ const Select: React.FC<SelectProps> & {
   intent,
   variant,
   hideIcon,
+  className,
+  style,
   contentIntent = 'default',
   contentPosition = 'popper',
   placeholder,
@@ -52,7 +56,10 @@ const Select: React.FC<SelectProps> & {
 }) => {
   return (
     <PrimitiveSelect.Root {...props}>
-      <SelectTrigger intent={intent} variant={variant} {...triggerProps}>
+      <SelectTrigger
+        {...{ intent, variant, className, style }}
+        {...triggerProps}
+      >
         <PrimitiveSelect.Value placeholder={placeholder} />
       </SelectTrigger>
       <SelectContent
