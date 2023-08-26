@@ -10,7 +10,7 @@ import { badgeVariants } from './Badge.constants';
 export type BadgeProps = React.HTMLAttributes<HTMLSpanElement> &
 	CommonProps<BadgeVariations> & {
 		removeIcon?: React.ReactNode;
-		hideRemoveIcon?: boolean;
+		showRemoveIcon?: boolean;
 		removeIconClassName?: string;
 		removeIconStyle?: React.CSSProperties;
 		removeIconContainerClassName?: string;

@@ -17,7 +17,7 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
 			asChild = false,
 
 			removeIcon,
-			hideRemoveIcon = false,
+			showRemoveIcon = false,
 			removeIconClassName,
 			removeIconStyle,
 			removeIconContainerClassName,
@@ -37,8 +37,8 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
 				{...props}
 			>
 				{children}
-				{!hideRemoveIcon && (
-					<span
+				{showRemoveIcon && (
+					<button
 						className={removeIconContainerClassName}
 						style={removeIconContainerStyle}
 						onClick={onRemove}
@@ -49,7 +49,7 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
 								style={removeIconStyle}
 							/>
 						)}
-					</span>
+					</button>
 				)}
 			</Comp>
 		);

@@ -3,13 +3,15 @@ import { ButtonGallery } from './Galleries/ButtonGallery';
 import { SelectGallery } from './Galleries/SelectGallery';
 import { Select, Background } from '@reactds/coorg';
 import { pascalToTitleCase } from './utils/string';
+import { BadgeGallery } from './Galleries/BadgeGallery';
 
-const COMPONENT_NAMES = ['button', 'select'] as const;
+const COMPONENT_NAMES = ['button', 'select', 'badge'] as const;
 type ComponentName = (typeof COMPONENT_NAMES)[number];
 
 const GALLERY_MAP: Record<ComponentName, React.FC> = {
 	button: ButtonGallery,
 	select: SelectGallery,
+	badge: BadgeGallery,
 } as const;
 
 const DEFAULT_COMPONENT_NAME =
@@ -38,7 +40,6 @@ function App() {
 						</Select.Item>
 					))}
 				</Select>
-
 				<CurrentGallery />
 			</>
 		</Background>
