@@ -11,7 +11,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "start": "rollup -c rollup.config.dev.mjs --watch",
-    "build": "rm -rf dist && rollup -c rollup.config.dev.mjs && node scripts/cleanupCSSImportsFromDeclarationFiles.js && rollup -c rollup.config.prod.mjs",
+    "build": "rm -rf dist/* && rollup -c rollup.config.dev.mjs && node scripts/cleanupCSSImportsFromDeclarationFiles.js && rollup -c rollup.config.prod.mjs",
     "build:dependencies": "cd ../core && npm run build",
     "build:through": "npm run build:dependencies && npm run build",
     "lint:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
